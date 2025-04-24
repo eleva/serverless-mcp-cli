@@ -5,7 +5,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export default class Init extends Command {
-  static description = 'Initialize a serverless MCP project with your preferred framework'
+  static description = 'Initialize a serverless MCP server on AWS with your preferred framework'
 
   static flags = {
     dir: Flags.string({
@@ -24,9 +24,9 @@ export default class Init extends Command {
 
     if (!flags.silent) {
       this.log(`
-        👋 Hey there! Welcome to the Serverless MCP Boilerplate CLI.
+        👋 Hey there! Welcome to the Serverless MCP server on AWS boilerplate CLI.
         
-        This tool helps you kickstart your serverless MCP server by letting you choose your preferred deployment framework for AWS.
+        This tool helps you kickstart your serverless MCP server on AWS by letting you choose your preferred deployment framework.
         
         You can pick from:
         - Serverless Framework
@@ -63,7 +63,7 @@ export default class Init extends Command {
 
       // Check if the directory already exists
       if (fs.existsSync(fullPath)) {
-        this.error(`❌ Directory "${targetDir}" already exists. Please choose a different name with --dir`)
+        this.error(`❌ Directory "${targetDir}" already exists. Please choose a different name with --d`)
         return
       }
 
